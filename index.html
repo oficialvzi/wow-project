@@ -66,10 +66,9 @@
   });
   });
 
-  firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    window.location = 'logged-in.html'
+  firebase.auth().onAuthStateChanged(user => {
+  if(user) {
+    window.location = 'logged-in.html';
   }
 });
 
