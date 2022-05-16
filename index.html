@@ -51,6 +51,7 @@
     const user = result.user;
         
     alert("Autenticado com sucesso");
+    window.location = 'logged-in.html';
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -65,12 +66,5 @@
     alert(errorMessage);
   });
   });
-
-  firebase.auth().onAuthStateChanged(user => {
-  if(user) {
-    window.location = 'logged-in.html';
-  }
-});
-
 </script>
 </html>
