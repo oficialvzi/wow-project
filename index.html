@@ -41,7 +41,6 @@
   const provider = new GoogleAuthProvider(app);
 
   login.addEventListener('click', (e) => {
-    signInWithRedirect(auth, provider);
 
     signInWithPopup(auth, provider)
   .then((result) => {
