@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Logged In Area</title>
 </head>
 <body>
-    
+    <h1>LOGGED IN SCREEN</h1>
+    <div class="right">
+        <button class="social-signin google" id='logout'>Logout</button>
+    </div>
+
+    <script>
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            window.location = 'index.html';
+        }).catch((error) => {
+            // An error happened.
+            alert.user("Erro ao deslogar");
+        });
+    </script>
 </body>
 </html>
