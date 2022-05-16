@@ -12,3 +12,10 @@ h1 {
     align-items: center;
     height: 50px;
 }
+
+.right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
