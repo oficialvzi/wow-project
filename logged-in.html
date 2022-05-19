@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WOW PROJECT</title>
+  </head>
+  <body>
+    <nav>
+      <div class="right" id="navbar">
+        <button class="btn" id="logout">Logout</button>
+      </div>
+    </nav>
+    <h1>WOW &#128559</h1>
+    <div>
+      <video id="vid" preload="auto" autoplay controls></video>
+    </div>
+    <div class="center">
+      <br />
+      <!-- Botão para mostrar um novo vídeo-->
+      <button type="button" id="new-wow">Atualizar o vídeo</button>
+    </div>
+    <div id="info"></div>
+    <script type="module">
+      import {
+        app,
+        analytics,
+        auth,
+        provider,
+        signInWithPopup,
+        onAuthStateChanged,
+        signOut,
+      } from "./firebase.js";
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in
+          const uid = user.uid;
+          return;
+        } else {
+          // User is signed out
+          window.location.href = "index.html";
+        }
+      });
+
+      document.getElementById("logout").addEventListener("click", (e) => {
+        signOut(auth)
+          .then(() => {})
+          .catch((error) => {
+            alert("error");
+          });
+      });
+
+      const options = {
+        method: "GET",
+        headers: { Accept: "application/json" },
+      };
+
+      document.getElementById("new-wow").addEventListener("click", (e) => {
+        newVideo();
+      });
+
+      // Função para pegar um vídeo da API do Owen-Wilson-Wow-API
+      var videoDOM = document.getElementById("vid");
+      function newVideo() {
+        fetch("https://owen-wilson-wow-api.herokuapp.com/wows/random", options)
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (data) {
+            videoDOM.src = data[0].video["1080p"];
+          });
+      }
+      newVideo();
+    </script>
+  </body>
+</html>

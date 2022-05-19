@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>WOW PROJECT</title>
+  </head>
+  <body>
+    <iframe src="" id="content"></iframe>
+
+    <script type="module">
+      //Checkar se o usuário está logado com o google na Firebase e se estiver logado mostrar o conteúdo da página "logged-in.html" no iframe, e se o usuário não estiver logado, mostrar a página "home.html" no iframe
+      var iframecontent = document.getElementById("content");
+      import { auth, onAuthStateChanged } from "./firebase.js";
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in
+          const uid = user.uid;
+          iframecontent.src = "./logged-in.html";
+        } else {
+          // User is signed out
+          iframecontent.src = "./home.html";
+        }
+      });
+    </script>
+  </body>
+</html>
