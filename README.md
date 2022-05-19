@@ -9,8 +9,6 @@
     <h2><a href="https://wow-project-44fdc.web.app/">Site do WOW Project pelo deploy do Firebase</a></h2>
     <p>Acima tem o link para o deploy feito pelo Firebase do site do WOW Project</p>
 </div>
-<footer>
-    <div>
-        <p>Este é o meu primeiro projeto e espero melhorar nos próximos. Contei com a ajuda do Dunas para a realização do projeto, e recomendo que vejam tanto o repositório dele(clicando <a href="https://github.com/luandunas">aqui</a>) ou o seu site pessoal (clicando <a href="https://luandunas.ga">aqui</a>) e obrigado Dunas se ver isso =)</p>
-    </div>
-</footer>
+<div>
+    <p>Este é o meu primeiro projeto e espero melhorar nos próximos. Contei com a ajuda do Dunas para a realização do projeto, e recomendo que vejam tanto o repositório dele(clicando <a href="https://github.com/luandunas">aqui</a>) ou o seu site pessoal (clicando <a href="https://luandunas.ga">aqui</a>) e obrigado Dunas se ver isso =)</p>
+</div>
