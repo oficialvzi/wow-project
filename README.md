@@ -1,5 +1,5 @@
 <div>
-  <h1>WOW Project</h1>
+  <h1>WOW Project &#128559</h1>
 </div>
 <div>
   <h2>Descrição do projeto</h2>
