@@ -64,7 +64,7 @@
       // Função para pegar um vídeo da API do Owen-Wilson-Wow-API
       var videoDOM = document.getElementById("vid");
       function newVideo() {
-        fetch("https://owen-wilson-wow-api.herokuapp.com/wows/random", options)
+        fetch("https://owen-wilson-wow-api.onrender.com/wows/random", options)
           .then(function (res) {
             return res.json();
           })
